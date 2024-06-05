@@ -1,5 +1,5 @@
 function getComputerChoice() {
-    let randomNumber = Math.random() * 100;
+    let randomNumber = Math.round(Math.random() * 100);
     console.log(randomNumber);
     if (randomNumber === 0) {
         return getComputerChoice();
