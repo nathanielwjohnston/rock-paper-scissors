@@ -12,4 +12,14 @@ function getComputerChoice() {
     }
 }
 
-console.log(getComputerChoice());
+function getHumanChoice() {
+    let userChoice = prompt("Choose rock, paper, or scissors");
+    userChoice = userChoice.toLowerCase();
+    if (userChoice !== "rock" && userChoice !== "paper" && userChoice !== "scissors") {
+        return getHumanChoice();
+    } else {
+        return userChoice;
+    }
+}
+
+console.log(getHumanChoice());
