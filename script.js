@@ -30,12 +30,15 @@ function playRound() {
             humanChoice === "scissors" && computerChoice === "paper" ||
             humanChoice === "paper" && computerChoice === "rock"
         ) {
+            console.log(`You win! ${humanChoice} beats ${computerChoice}.`)
             return "human";
         } else if (
             humanChoice === computerChoice
         ) {
+            console.log("It was a draw!")
             return;
         } else {
+            console.log(`You lose. ${computerChoice} beats ${humanChoice}.`)
             return "computer";
         }
 }
@@ -53,8 +56,13 @@ function playGame() {
         }
     }
 
-    console.log(humanScore);
-    console.log(computerScore);
+    if (humanScore > computerScore) {
+        console.log(`You won this game: ${humanScore} to ${computerScore}`)
+    } else if (humanScore === computerScore) {
+        console.log(`You drew this game: ${humanScore} to ${computerScore}`)
+    } else {
+        console.log(`You lost this game: ${humanScore} to ${computerScore}`)
+    }
 }
 
 playGame();
