@@ -22,5 +22,28 @@ function getHumanChoice() {
     }
 }
 
+function playRound(humanChoice, computerChoice) {
+    if (
+            humanChoice === "rock" && computerChoice === "scissors" || 
+            humanChoice === "scissors" && computerChoice === "paper" ||
+            humanChoice === "paper" && computerChoice === "rock"
+        ) {
+            humanScore++;
+            return;
+        } else if (
+            humanChoice === computerChoice
+        ) {
+            return;
+        } else {
+            computerScore++;
+            return;
+        }
+}
+
 let humanScore = 0;
 let computerScore = 0;
+
+let humanSelection = getHumanChoice();
+let computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
