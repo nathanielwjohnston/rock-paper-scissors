@@ -30,22 +30,31 @@ function playRound() {
             humanChoice === "scissors" && computerChoice === "paper" ||
             humanChoice === "paper" && computerChoice === "rock"
         ) {
-            humanScore++;
-            return;
+            return "human";
         } else if (
             humanChoice === computerChoice
         ) {
             return;
         } else {
-            computerScore++;
-            return;
+            return "computer";
         }
 }
 
-let humanScore = 0;
-let computerScore = 0;
+function playGame() {
+    let humanScore = 0;
+    let computerScore = 0;
 
-playRound();
+    for (let i = 0; i < 5; i++) {
+        let result = playRound();
+        if (result === "human") {
+            humanScore++;
+        } else if (result === "computer") {
+            computerScore++;
+        }
+    }
 
-console.log(humanScore);
-console.log(computerScore);
+    console.log(humanScore);
+    console.log(computerScore);
+}
+
+playGame();
