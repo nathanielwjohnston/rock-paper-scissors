@@ -48,8 +48,12 @@ function playGame() {
 
             if (result === "user") {
                 userScore++;
+                document.querySelector("#score").textContent =
+                    `User Score: ${userScore}, Computer Score: ${computerScore}`
             } else if (result === "computer") {
                 computerScore++;
+                document.querySelector("#score").textContent =
+                `User Score: ${userScore}, Computer Score: ${computerScore}`
             }
 
             if (userScore > computerScore) {
