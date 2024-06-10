@@ -47,13 +47,11 @@ function playGame() {
     let humanScore = 0;
     let computerScore = 0;
 
-    for (let i = 0; i < 5; i++) {
-        let result = playRound();
-        if (result === "human") {
-            humanScore++;
-        } else if (result === "computer") {
-            computerScore++;
-        }
+    let result = playRound();
+    if (result === "human") {
+        humanScore++;
+    } else if (result === "computer") {
+        computerScore++;
     }
 
     if (humanScore > computerScore) {
