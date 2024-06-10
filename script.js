@@ -11,56 +11,57 @@ function getComputerChoice() {
     }
 }
 
-function getHumanChoice() {
-    let userChoice = prompt("Choose rock, paper, or scissors");
-    userChoice = userChoice.toLowerCase();
-    if (userChoice !== "rock" && userChoice !== "paper" && userChoice !== "scissors") {
-        return getHumanChoice();
-    } else {
-        return userChoice;
-    }
-}
-
-function playRound() {
-    let humanChoice = getHumanChoice();
+function playRound(userChoice) {
     let computerChoice = getComputerChoice();
 
     if (
-            humanChoice === "rock" && computerChoice === "scissors" || 
-            humanChoice === "scissors" && computerChoice === "paper" ||
-            humanChoice === "paper" && computerChoice === "rock"
+            userChoice === "rock" && computerChoice === "scissors" || 
+            userChoice === "scissors" && computerChoice === "paper" ||
+            userChoice === "paper" && computerChoice === "rock"
         ) {
-            console.log(`You win! ${humanChoice} beats ${computerChoice}.`)
-            return "human";
+            console.log(`You win! ${userChoice} beats ${computerChoice}.`)
+            return "user";
         } else if (
-            humanChoice === computerChoice
+            userChoice === computerChoice
         ) {
             console.log("It was a draw!")
             return;
         } else {
-            console.log(`You lose. ${computerChoice} beats ${humanChoice}.`)
+            console.log(`You lose. ${computerChoice} beats ${userChoice}.`)
             return "computer";
         }
 }
 
 function playGame() {
-    let humanScore = 0;
+    let userScore = 0;
     let computerScore = 0;
 
-    let result = playRound();
-    if (result === "human") {
-        humanScore++;
-    } else if (result === "computer") {
-        computerScore++;
-    }
+    const buttons = document.querySelectorAll("button");
 
-    if (humanScore > computerScore) {
-        console.log(`You won this game: ${humanScore} to ${computerScore}`)
-    } else if (humanScore === computerScore) {
-        console.log(`You drew this game: ${humanScore} to ${computerScore}`)
-    } else {
-        console.log(`You lost this game: ${humanScore} to ${computerScore}`)
-    }
+    buttons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            const userChoice = e.target.id;
+            let result = playRound(userChoice);
+
+            if (result === "user") {
+                userScore++;
+            } else if (result === "computer") {
+                computerScore++;
+            }
+
+            if (userScore > computerScore) {
+                console.log(`You won this game: ${userScore} to ${computerScore}`)
+            } else if (userScore === computerScore) {
+                console.log(`You drew this game: ${userScore} to ${computerScore}`)
+            } else {
+                console.log(`You lost this game: ${userScore} to ${computerScore}`)
+            }
+        })
+    })
+
+
+
+
 }
 
 playGame();
