@@ -20,17 +20,17 @@ function playRound(userChoice) {
             userChoice === "paper" && computerChoice === "rock"
         ) {
             document.querySelector("#results").textContent = 
-                `You win! ${userChoice} beats ${computerChoice}.`
+                `You won that round! ${userChoice} beats ${computerChoice}.`
             return "user";
         } else if (
             userChoice === computerChoice
         ) {
             document.querySelector("#results").textContent =
-                "It was a draw!"
+                "It was a draw that round!"
             return;
         } else {
             document.querySelector("#results").textContent =
-                `You lose. ${computerChoice} beats ${userChoice}.`
+                `You lost that round. ${computerChoice} beats ${userChoice}.`
             return "computer";
         }
 }
