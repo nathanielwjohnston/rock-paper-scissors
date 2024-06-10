@@ -56,13 +56,13 @@ function playGame() {
                 `User Score: ${userScore}, Computer Score: ${computerScore}`
             }
 
-            if (userScore > computerScore) {
+            if (userScore > computerScore && userScore === 5) {
                 document.querySelector("#results").textContent = 
                     `You won this game: ${userScore} to ${computerScore}`
-            } else if (userScore === computerScore) {
+            } else if (userScore === computerScore && userScore === 5) {
                 document.querySelector("#results").textContent =
                     `You drew this game: ${userScore} to ${computerScore}`
-            } else {
+            } else if (computerScore > userScore && computerScore === 5) {
                 document.querySelector("#results").textContent =
                     `You lost this game: ${userScore} to ${computerScore}`
             }
