@@ -19,15 +19,18 @@ function playRound(userChoice) {
             userChoice === "scissors" && computerChoice === "paper" ||
             userChoice === "paper" && computerChoice === "rock"
         ) {
-            console.log(`You win! ${userChoice} beats ${computerChoice}.`)
+            document.querySelector("#results").textContent = 
+                `You win! ${userChoice} beats ${computerChoice}.`
             return "user";
         } else if (
             userChoice === computerChoice
         ) {
-            console.log("It was a draw!")
+            document.querySelector("#results").textContent =
+                "It was a draw!"
             return;
         } else {
-            console.log(`You lose. ${computerChoice} beats ${userChoice}.`)
+            document.querySelector("#results").textContent =
+                `You lose. ${computerChoice} beats ${userChoice}.`
             return "computer";
         }
 }
@@ -50,11 +53,14 @@ function playGame() {
             }
 
             if (userScore > computerScore) {
-                console.log(`You won this game: ${userScore} to ${computerScore}`)
+                document.querySelector("#results").textContent = 
+                    `You won this game: ${userScore} to ${computerScore}`
             } else if (userScore === computerScore) {
-                console.log(`You drew this game: ${userScore} to ${computerScore}`)
+                document.querySelector("#results").textContent =
+                    `You drew this game: ${userScore} to ${computerScore}`
             } else {
-                console.log(`You lost this game: ${userScore} to ${computerScore}`)
+                document.querySelector("#results").textContent =
+                    `You lost this game: ${userScore} to ${computerScore}`
             }
         })
     })
