@@ -52,22 +52,22 @@ function playGame() {
             if (result === "user") {
                 userScore++;
                 document.querySelector("#score").textContent =
-                    `User Score: ${userScore}, Computer Score: ${computerScore}`
+                    `User Score: ${userScore}, Computer Score: ${computerScore}`;
             } else if (result === "computer") {
                 computerScore++;
                 document.querySelector("#score").textContent =
-                    `User Score: ${userScore}, Computer Score: ${computerScore}`
+                    `User Score: ${userScore}, Computer Score: ${computerScore}`;
             }
 
             if (userScore > computerScore && userScore === 5) {
                 document.querySelector("#results").textContent = 
-                    `You won this game: ${userScore} to ${computerScore}`
+                    `You won this game: ${userScore} to ${computerScore}`;
             } else if (userScore === computerScore && userScore === 5) {
                 document.querySelector("#results").textContent =
-                    `You drew this game: ${userScore} to ${computerScore}`
+                    `You drew this game: ${userScore} to ${computerScore}`;
             } else if (computerScore > userScore && computerScore === 5) {
                 document.querySelector("#results").textContent =
-                    `You lost this game: ${userScore} to ${computerScore}`
+                    `You lost this game: ${userScore} to ${computerScore}`;
             }
         })
     })
