@@ -39,6 +39,9 @@ function playGame() {
     let userScore = 0;
     let computerScore = 0;
 
+    document.querySelector("#score").textContent =
+        `User Score: ${userScore}, Computer Score: ${computerScore}`
+
     const buttons = document.querySelectorAll("button");
 
     buttons.forEach(button => {
@@ -53,7 +56,7 @@ function playGame() {
             } else if (result === "computer") {
                 computerScore++;
                 document.querySelector("#score").textContent =
-                `User Score: ${userScore}, Computer Score: ${computerScore}`
+                    `User Score: ${userScore}, Computer Score: ${computerScore}`
             }
 
             if (userScore > computerScore && userScore === 5) {
